@@ -1,6 +1,4 @@
-package flugeinheit;
-
-import flugeinheit.Flugeinheit;
+package advancewars.flugeinheit;
 
 public abstract class Kriegsflugzeuge extends Flugeinheit {
 }

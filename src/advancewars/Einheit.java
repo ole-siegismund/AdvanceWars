@@ -1,3 +1,5 @@
+package advancewars;
+
 import java.io.Serializable;
 
 public abstract class Einheit implements Serializable {
