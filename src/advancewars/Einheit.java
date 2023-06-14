@@ -3,7 +3,7 @@ package advancewars;
 import java.io.Serializable;
 
 public abstract class Einheit implements Serializable {
-    private static final long serialVersionUID = 2L;
+    private static final long serialVersionUID = 3L;
     private int rangeMin;
     private int rangeMax;
     private int sight;
@@ -11,6 +11,24 @@ public abstract class Einheit implements Serializable {
     private int posX;
     private int posY;
     private int cost;
+    private int hp = 10;
+    private int vorteil;
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public int getVorteil() {
+        return vorteil;
+    }
+
+    public void setVorteil(int vorteil) {
+        this.vorteil = vorteil;
+    }
 
     public boolean kannAngreifen(Einheit einheit) {
         return false;
