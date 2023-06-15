@@ -1,6 +1,7 @@
 package advancewars;
 
 import java.io.Serializable;
+import java.util.Random;
 
 public abstract class Einheit implements Serializable {
     private static final long serialVersionUID = 3L;
@@ -34,7 +35,25 @@ public abstract class Einheit implements Serializable {
         return false;
     }
     public void angreifen(Einheit einheit) {
+        //this = angreifer
+        //einheit = verteidiger
+        double multipilkator = Data.table(this, einheit);
+        double terrainvorteil = 0;
 
+        double random = new Random().nextDouble(0, 0.9);
+        random = random*10;
+        random = Math.round(random);
+        random = random /10;
+
+        double a = 10 * multipilkator + random;
+        System.out.println("a "+a);
+
+        double b = 1-((terrainvorteil * einheit.getHp()) / 10);
+        System.out.println("b "+b);
+
+        double dmg = (this.getHp() / 10) * a * b;
+        System.out.println("dmg "+dmg);
+        einheit.setHp((int) (einheit.getHp()-dmg));
     }
     public void bewegen(int x, int y) {
 
