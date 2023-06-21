@@ -1,9 +1,11 @@
 package advancewars;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Random;
 
 public abstract class Einheit implements Serializable {
+    @Serial
     private static final long serialVersionUID = 3L;
     private int rangeMin;
     private int rangeMax;
@@ -14,6 +16,11 @@ public abstract class Einheit implements Serializable {
     private int cost;
     private int hp = 10;
     private int vorteil;
+    private Feld feld;
+
+    public Feld getFeld() {
+        return feld;
+    }
 
     public int getHp() {
         return hp;
